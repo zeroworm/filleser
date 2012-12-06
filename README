@@ -1,0 +1,5 @@
+{
+  name:'HTML5 filebrowser',
+  server:'node.js',
+  client:'HTML5',
+}

@@ -1,0 +1,10 @@
+{
+  "1":{"type":"dir","name":"a.dir","parent":"0","adresse":"/"},
+  "2":{"type":"dir","name":"b.dir","parent":"0","adresse":"/"},
+  "3":{"type":"dir","name":"c.dir","parent":"0","adresse":"/"},
+  "4":{"type":"fil","name":"a.fil","size":"1024","parent":"0","adresse":"/"},
+  "5":{"type":"fil","name":"b.fil","size":"1036","parent":"1","adresse":"/b.dir/"},
+  "6":{"type":"fil","name":"c1.fil","size":"856","parent":"2","adresse":"/c.dir/"},
+  "7":{"type":"fil","name":"c2.fil","size":"1556","parent":"2","adresse":"/c.dir/"},
+  "8":{"type":"dir","name":"c.dir","parent":"1","adresse":"/b.dir/"}
+}

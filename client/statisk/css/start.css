@@ -1,0 +1,7 @@
+header{width:90%;margin:auto;}
+header>h4{width:20%;margin:auto;font-family:monospace;color:#103020;}
+#adresseSection{width:90%;margin:auto;margin-top:5em;}
+#adresseSection>article{width:50%;margin:auto;padding:1em;}
+#adresse{width:90%;margin:auto;}
+
+.usynlig{display:none;}
