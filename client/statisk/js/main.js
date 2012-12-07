@@ -3,7 +3,7 @@ var arbeid,vis,lerret,tool;
 function klikk(elementer){
   for(var i=0;i<elementer.length;i++){
     elementer[i].onclick=function(){
-      var identitet=this.id.split('_')[1];
+      var identitet=Number(this.id.split('_')[1]);
       if(tegnig.filListe[identitet].type==='dir'){
         tegnig.currentDir=identitet;
         tegnig.currentElement=identitet;
