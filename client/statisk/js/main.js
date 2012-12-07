@@ -1,16 +1,22 @@
-var arbeid,vis,lerret;
+var arbeid,vis,lerret,tool;
+
 function klikk(elementer){
   for(var i=0;i<elementer.length;i++){
     elementer[i].onclick=function(){
       var identitet=this.id.split('_')[1];
       if(tegnig.filListe[identitet].type==='dir'){
         tegnig.currentDir=identitet;
-        lerret.innerHTML='';
+        tegnig.currentElement=identitet;
+        tegnig.tegne();
+      }else{
+        tegnig.currentDir=tegnig.filListe[identitet].parent;
+        tegnig.currentElement=identitet;
         tegnig.tegne();
       }
     };
   }
 }
+
 function make(liste){
   liste.forEach(function(objekt,i,l){
     objekt.id=i;
@@ -86,7 +92,7 @@ function make(liste){
 
 tegnig={
   currentDir:0,
-  currentUtvalg:-1,
+  currentElement:0,
   aktivDir:[],
   filListe:[],
   getAktiv:function(){
@@ -100,11 +106,18 @@ tegnig={
     }
     this.aktivDir.unshift(0);
   },
+  velg:function(){
+    var valgt=document.getElementsByClassName('valgt');
+    for(var i=0;i<valgt.length;i++){
+      valgt[i].classList.remove('valgt');
+    }
+    document.getElementById('element_'+this.currentElement).classList.add('valgt');
+  },
   getUpper:function(){
     var self=this;
-    vis.innerHTML='';
     this.getAktiv();
     var aktivListe=this.aktivDir;
+    vis.innerHTML='<article class="dir ikon aktiv"><span id="element_0" class="klikkbar">/.dir</span></article><article class="fjerne"></article>';
     while(aktivListe.length!==0){
       var barn=this.filListe[aktivListe.shift()].children;
       barn.forEach(function(x){
@@ -119,12 +132,16 @@ tegnig={
   },
   tegne:function(){
     var self=this;
+    lerret.innerHTML='';
+    document.getElementById('filName').innerHTML='<span class="data">name: '+tegnig.filListe[this.currentElement].name+'</span>';
+    document.getElementById('size').innerHTML='<span class="data">size: '+tegnig.filListe[this.currentElement].size+'</span>';
+    document.getElementById('adresse').innerHTML='<span class="data">adresse: '+tegnig.filListe[this.currentElement].adresse+'</span>';
     this.getUpper();
     var barn=this.filListe[tegnig.currentDir].children;
     barn.forEach(function(x){
       lerret.innerHTML+='<article class="'+self.filListe[x].type+' ikon"><span id="element_'+x+'" class="klikkbar">'+self.filListe[x].name+'</span></article>';
     });
-    
+    this.velg();
     var elementer=lerret.getElementsByClassName('klikkbar');
     klikk(elementer);
   },
@@ -133,6 +150,7 @@ tegnig={
 window.onload=function(){
   arbeid=document.getElementById('arbeid');
   vis=document.getElementById('vis');
+  tool=document.getElementById('tool');
   lerret=document.getElementById('lerret');
   
   var fillisteReq=new XMLHttpRequest();

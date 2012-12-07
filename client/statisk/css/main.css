@@ -2,11 +2,16 @@ header{font-size:1.5em;width:90%;margin:auto;font-family:monospace;color:#253529
 header h4{width:100%;margin:auto;text-align:center;}
 section{width:90%;margin: auto;}
 #arbeid{color:#3b3c36;}
-#lerret{clear:both;width:80%;margin:auto;}
+#vis{margin-bottom:1em;width:80%;}
+#tools{float:left;width:15%;margin-left:1em;margin-right:1em;}
+#lerret{float:left;margin-left:2em;margin-right:2em;width:65%;}
+#dataene{float:right;width:15%;margin-left:1em;margin-right:1em;}
 
 .ikon{float:left;}
-#vis>article.ikon{margin-left:0.1em;margin-right:0.1em;}
+#vis>article.ikon{margin-left:0.1em;margin-right:0.1em;border-left:1px solid #253529;padding-left:0.1em;padding-right:0.1em;}
 #lerret>article.ikon{margin:1em;}
+
+.data{color:#3b3c36;font-family:monospace;}
 
 .fil>span{color:#1b4d3e;font-family:monospace;border:1px solid #49796b;border-top-left-radius:0.35em;border-top-right-radius:0.35em;border-bottom-right-radius:0.35em;}
 .dir>span{color:#062a78;font-family:monospace;border:1px solid #0087bd;border-bottom-left-radius:0.25em;border-top-right-radius:0.25em;border-bottom-right-radius:0.25em;}
@@ -15,3 +20,4 @@ section{width:90%;margin: auto;}
 
 .usynlig{display:none;}
 .fjerne{clear:both;}
+.valgt{background-color:#f5f5dc;}
