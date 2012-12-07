@@ -4,9 +4,14 @@ section{width:90%;margin: auto;}
 #arbeid{color:#3b3c36;}
 #lerret{clear:both;width:80%;margin:auto;}
 
-.icon{float:left;margin:1em;}
+.ikon{float:left;}
+#vis>article.ikon{margin-left:0.1em;margin-right:0.1em;}
+#lerret>article.ikon{margin:1em;}
 
 .fil>span{color:#1b4d3e;font-family:monospace;border:1px solid #49796b;border-top-left-radius:0.35em;border-top-right-radius:0.35em;border-bottom-right-radius:0.35em;}
 .dir>span{color:#062a78;font-family:monospace;border:1px solid #0087bd;border-bottom-left-radius:0.25em;border-top-right-radius:0.25em;border-bottom-right-radius:0.25em;}
+.aktiv.fil>span{color:#1b4d3e;font-family:monospace;border:1px solid red;border-top-left-radius:0.35em;border-top-right-radius:0.35em;border-bottom-right-radius:0.35em;}
+.aktiv.dir>span{color:#062a78;font-family:monospace;border:1px solid red;border-bottom-left-radius:0.25em;border-top-right-radius:0.25em;border-bottom-right-radius:0.25em;}
 
 .usynlig{display:none;}
+.fjerne{clear:both;}
