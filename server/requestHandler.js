@@ -1,10 +1,11 @@
 var fs=require('fs');
-var body=fs.readFileSync('../client/main.html');
 
 function start(res){
-  res.writeHead(200,{'Content-Type':'text/html'});
-  res.write(body);
-  res.end();
+  fs.readFile('../client/main.html',function(err,data){
+    res.writeHead(200,{'Content-Type':'text/html'});
+    res.write(data);
+    res.end();
+  });
 }
 
 function remove(res){
